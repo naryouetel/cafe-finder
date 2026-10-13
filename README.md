@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Cafe Finder
 
-## Getting Started
+> ノマド・リモートワーカーのための、最適な作業環境が見つかるカフェ検索・比較Webアプリケーション。
 
-First, run the development server:
+## 開発背景（なぜこのアプリを作ったのか）
+既存のグルメサイトやマップアプリでは、「Wi-Fiの速度」「静かさ」「Web会議の可否」といったリモートワーカー視点の細かい作業環境が分からないという課題がありました。
+「単なる飲食店の検索」ではなく、「ワーカーが本当に知りたい作業環境の条件」に特化し、一目で比較・検討できるアプリケーションを開発しました。
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## リンク
+* 本番URL: https://cafe-finder-red.vercel.app
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 使用技術（Tech Stack）
+* フロントエンド: Next.js (App Router) / TypeScript / Tailwind CSS
+* バックエンド / データベース: Supabase (PostgreSQL)
+* インフラ / デプロイ: Vercel
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 主な機能
+1. 3軸の作業スコア視覚化（じっくり作業・Web会議・サクッと作業）を3段階評価で表示。
+2. リアルタイムキーワード検索 ＆ 条件フィルター（高速Wi-Fi、電源ありなど）。
+3. お気に入り機能（localStorageを用いた状態の永続化）。
+4. レスポンシブ対応（モバイルファーストのUI/UXデザイン）。
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## デザイン・実装のこだわり
+* カフェの持つ落ち着いた雰囲気を表現するため、ウォームトーンのグラデーションや、上品なフォント、ガラスモーフィズム（`backdrop-blur-sm`）を採用し、チープ感を排除した洗練されたUIに仕上げました。
+* Supabaseを用いたデータベース設計から、Next.jsのApp Routerを活用したルーティング、画像読み込み・配置の最適化まで一貫して一人で実装しています。
